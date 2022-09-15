@@ -1,80 +1,68 @@
 jQuery(document).ready(function ($) {
-
-  $('.popup--close').click(function(){
-    $('.popup').removeClass('active');
+  $(".popup--close").click(function () {
+    $(".popup").removeClass("active");
   });
-  $('.popup--button').click(function(){
-    $('.popup').addClass('active');
+  $(".popup--button").click(function () {
+    $(".popup").addClass("active");
   });
-
-  
-
-  $('.navigation-desktop h5').click(function(){
-    $(this).toggleClass('active').siblings().removeClass('active');
-    $(this).next().toggleClass('show').siblings().removeClass('show');
+  $(".navigation-desktop h5").click(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+    $(this).next().toggleClass("show").siblings().removeClass("show");
     if ($(".dropdown-menu").hasClass("show")) {
       $("#PureChatWidget").hide();
     } else {
       $("#PureChatWidget").show();
     }
-
-    
-
-    
-    
-    
-    
+  });
+  // added this to close main nav menu when clicking outside of nav
+  $("body").click(function (event) {
+    var target = $(event.target);
+    var $navDesktop = $(".navigation-desktop h5");
+    var $navNoTrigger = $(".dropdown-menu .no_trigger");
+    if (target.is($navDesktop) || target.is($navNoTrigger)) {
+    } else {
+      $(".dropdown-menu").removeClass("show");
+    }
+  });
 
   $(".nav_line ul, .mobile-nav").hide();
-  
   $(".hamburger").click(function () {
     $(".mobile-nav").slideToggle(600);
-    $(this).toggleClass('open');
-    $("body, html").toggleClass('mobile-nav-open');
+    $(this).toggleClass("open");
+    $("body, html").toggleClass("mobile-nav-open");
     if ($("body, htmlu").hasClass("mobile-nav-open")) {
       $("#PureChatWidget").hide();
     } else {
       $("#PureChatWidget").show();
     }
   });
-
-
   $(".nav_line").click(function () {
     $(this).toggleClass("expand");
     $(this).find("ul").slideToggle(600);
   });
-
-
-  if($('#BambooHR-ATS').length) {
-    var interval = setInterval(function() {
-      if($('.BambooHR-ATS-Jobs-Item').length) {
-        clearInterval(interval)
-        $('.BambooHR-ATS-Jobs-Item')
+  if ($("#BambooHR-ATS").length) {
+    var interval = setInterval(function () {
+      if ($(".BambooHR-ATS-Jobs-Item").length) {
+        clearInterval(interval);
+        $(".BambooHR-ATS-Jobs-Item");
       }
-    }, 100)
-  };
-
-
+    }, 100);
+  }
   $("<p id='test'>").appendTo("body").css({
     padding: "5px 7px",
-    background: "#e9e9e9",
+    background: "#E9E9E9",
     position: "fixed",
     bottom: "15px",
     left: "35px",
   });
-
-  var headerHeight = $('header').outerHeight();
-  $('.panel--page').css('margin-top', headerHeight);
-  $('.panel--no-header').css('margin-top', headerHeight);
-
-  $( window ).resize(function() {
-    var headerHeight = $('header').outerHeight();
-    $('.panel--page').css('margin-top', headerHeight);
-    $('.panel--no-header').css('margin-top', headerHeight);
+  var headerHeight = $("header").outerHeight();
+  $(".panel--page").css("margin-top", headerHeight);
+  $(".panel--no-header").css("margin-top", headerHeight);
+  $(window).resize(function () {
+    var headerHeight = $("header").outerHeight();
+    $(".panel--page").css("margin-top", headerHeight);
+    $(".panel--no-header").css("margin-top", headerHeight);
   });
-
-
-
   $(window).scroll(function (e) {
     var target = e.currentTarget,
       self = $(target),
@@ -82,7 +70,6 @@ jQuery(document).ready(function ($) {
       lastScrollTop = self.data("lastScrollTop") || 0,
       scrollHeight = target.scrollHeight || document.body.scrollHeight,
       scrollText = "";
-      /*$(".dropdown-menu").fadeOut();*/
 
     if (scrollTop > lastScrollTop) {
       scrollText = "<b>scroll down</b>";
@@ -92,36 +79,31 @@ jQuery(document).ready(function ($) {
       scrollText = "<b>scroll up</b>";
       $("body").addClass("scroll-up");
     }
-
     if (scrollTop >= 100) {
-      $(".dropdown-menu").addClass("scroll");
+      $(".dropdown-menu.show").toggleClass("show").addClass("show-scroll-up");
     } else {
-      $(".dropdown-menu").removeClass("scroll");
+      $(".dropdown-menu.show-scroll-up")
+        .toggleClass("show")
+        .removeClass("show-scroll-up");
     }
-    
-// interesting -- this was here 
-    if (scrollTop >= 100) {
-      $(".navigation-desktop").addClass("scroll");
-    } else {
-      $(".navigation-desktop").removeClass("scroll");
-    }
-
-    // animate truck on scroll 
+    // interesting -- this was here
+    // if (scrollTop >= 100) {
+    //   $(".navigation-desktop").addClass("scroll");
+    // } else {
+    //   $(".navigation-desktop").removeClass("scroll");
+    // }
+    // animate truck on scroll
     if (scrollTop >= 400) {
       $(".truck").css("visibility", "visible");
       $(".truck").addClass("animate-truck");
     }
     //saves the current scrollTop
     self.data("lastScrollTop", scrollTop);
-  });  //what's up with this? lol
-
-    self.data("lastScrollTop", scrollTop);
-
-    /*if (scroll) {
+  }); //what's up with this? lol
+  self.data("lastScrollTop", scrollTop);
+  /*if (scroll) {
       $(".dropdown-content")
     }*/
-
-
   let width = $(window).width();
   if (width <= 768) {
     $(".truck").css("visibility", "visible");
@@ -129,8 +111,6 @@ jQuery(document).ready(function ($) {
   }
   $(".truck--page").css("visibility", "visible");
   $(".truck--page").addClass("animate-truck");
-
-
   // collapsable page form
   $(".gform_heading").on("click", function () {
     $(this).toggleClass("activate");
@@ -139,54 +119,37 @@ jQuery(document).ready(function ($) {
     $(".gform_footer").slideToggle(900);
     $(".gform_title").toggleClass("rotate");
   });
-
-
-  $('.sign-up').click(function(e){
+  $(".sign-up").click(function (e) {
     e.preventDefault();
-    $('.sign-up-modal').show(200);
-    $("body").css("overflow","hidden");
-    
+    $(".sign-up-modal").show(200);
+    $("body").css("overflow", "hidden");
   });
-$('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</h3>');
-  $('.sign-up-modal form h3').click(function(){
-    $('.sign-up-modal').hide(200);
-    $("body").css("overflow","scroll");
-  })
-  
-   
-   // Close the dropdown if the user clicks outside of it
-   $(document).on("click", function (e) {
-    if ($('.navigation-desktop h5').hasClass('active')) {
-      $(this).removeClass('active');
-    }
-    if ($('dropdown-menu').hasClass('show')) {
-      $(this).removeClass('show');
-      
-    }
+  $(".sign-up-modal form").prepend(
+    '<h3 class="u-padding6gu">Join Our Email List</h3>'
+  );
+  $(".sign-up-modal form h3").click(function () {
+    $(".sign-up-modal").hide(200);
+    $("body").css("overflow", "scroll");
   });
-  
-  
+
   // collapsable page menu
   $(".page-menu div > h4").on("click", function () {
     $(this).toggleClass("activate");
     $(".page-menu__list").slideToggle(800);
     $(".page-menu div > h4").toggleClass("rotate");
   });
-
-  $(".search-icon").click(function (){
+  $(".search-icon").click(function () {
     $(this).hide();
     $(".close-icon").show();
     $("header .searchandfilter").show();
   });
-  $(".close-icon").click(function (){
+  $(".close-icon").click(function () {
     $(this).hide();
     $(".search-icon").show();
     $("header .searchandfilter").hide();
   });
-
   $(window).on("scroll", function () {
     let reviews_section = $(".reviews");
-
     if (reviews_section.length) {
       if (
         $(window).scrollTop() >= reviews_section.offset().top - 500 &&
@@ -195,16 +158,13 @@ $('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</
         // Animate reviews section
         reviews_section.addClass("animate");
         $(".client-ratings").addClass("bounceInUp");
-
         // Animate technician
         $(".tech").addClass("bounceInRightTech");
-
         // animate stars and stuff
         animateReviewStars(reviews_section);
         animateReviewNumbers(reviews_section);
       }
     }
-
     // ANIMATE STARS - bounceInUp
     function animateReviewStars(el) {
       $(el)
@@ -216,16 +176,12 @@ $('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</
           }, 400 * i);
         });
     }
-
     $("#btn-left").addClass("bounceInRight");
     $("#btn-rt").addClass("bounceInLeft");
-
     // ANIMATE PERCENTAGES
-
     function animateReviewNumbers(el) {
       let counters = $(el).find(".percentage-count");
       console.log(counters);
-
       counters.each(() => {
         const updateCount = () => {
           const target = counter.getAttribute("data-target");
@@ -233,7 +189,6 @@ $('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</
           updateCount();
         };
       });
-
       counters.each(function () {
         let $this = $(this),
           countTo = $this.data("count"),
@@ -241,7 +196,6 @@ $('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</
         console.log("this =", this);
         console.log("countTo =", countTo);
         console.log("ratingNum =", ratingNum);
-
         switch (ratingNum) {
           case "rating-1":
             var speed = 3000;
@@ -252,7 +206,6 @@ $('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</
           default:
             var speed = 2000;
         }
-
         $({ countNum: $this.text() }).animate(
           {
             countNum: countTo,
@@ -269,7 +222,6 @@ $('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</
           }
         );
       });
-
       function commaSeparateNumber(val) {
         while (/(\d+)(\d{3})/.test(val.toString())) {
           val = val.toString().replace(/(\d+)(\d{3})/, "$1" + "," + "$2");
@@ -278,4 +230,5 @@ $('.sign-up-modal form').prepend('<h3 class="u-padding6gu">Join Our Email List</
       }
     }
   });
-});})
+  // });
+});

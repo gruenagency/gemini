@@ -30,13 +30,13 @@ $number = get_field('phone_number', 'options');
                     <!-- Start Dropdown -->
                     <div class="dropdown-menu">
                         <div class="flex flex--stretch">
-                            <div class="flex__col-3 u-lg-hidden">
-                                <img src="<?php echo $img; ?>" />
+                            <div class="flex__col-3 u-lg-hidden no_trigger">
+                                <img class="no_trigger" src="<?php echo $img; ?>" />
                             </div>
                             <div class="flex__col-9 flex__col-lg-12">
                                 <div class="flex flex--align-middle u-bgColorPrimary u-paddingBottom0gu u-lg-paddingBottom6gu">
-                                    <div class="flex__col-9 flex__col-lg-12 u-paddingVert4gu">
-                                        <h3 class="u-margin0gu u-textColorWhite u-textUppercase u-textAlignCenter"><?php echo $dropdown_menu_title;?></h3>
+                                    <div class="flex__col-9 flex__col-lg-12 u-paddingVert4gu no_trigger">
+                                        <h3 class="u-margin0gu u-textColorWhite u-textUppercase u-textAlignCenter no_trigger"><?php echo $dropdown_menu_title;?></h3>
                                     </div>
                                     <div class="flex__col-3 flex__col-lg-12 u-textAlignCenter">
                                         <a class="learn-more u-textUppercase u-textColorWhite" href="<?php echo $menu_link;?>" >Learn More</a>
