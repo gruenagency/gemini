@@ -1,0 +1,57 @@
+// For google reviews widget and google maps
+
+.cpw-widget-area .gpr-minimal-light-style {
+  padding: 2rem;
+}
+
+.gpr-business-header > .gpr-business-avatar {
+  width: 100%;
+  height: 200px;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  margin-bottom: 1rem;
+}
+
+.gpr-business-header {
+  margin-bottom: 1rem;
+}
+
+.gpr-review-header {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.gpr-review-info {
+  margin-left: 1rem;
+}
+.gpr-business-name > a span {
+  color: $color-primary-shade;
+}
+
+.gpr-google-logo-wrap,
+.star-rating-wrap {
+  width: 67px;
+  height: 13px;
+  margin: 10px 0;
+}
+
+.gpr-rating-value {
+  margin: 0;
+}
+
+.star-rating-size {
+  background-image: url("../../../../plugins/google-places-reviews/assets/dist/images/review_stars.png");
+  background-position: 0% 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0.5rem 0rem;
+}
+
+.gpr-review-content p {
+  margin: 0 0 2em;
+}
+
+// map
+
+.gmap {
+  border-right: 2px solid $color-tertiary;
+}

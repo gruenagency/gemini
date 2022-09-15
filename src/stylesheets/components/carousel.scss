@@ -1,0 +1,71 @@
+.badge {
+    img {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.slick-prev {
+    height: 20px;
+    width: 60px;
+    position: absolute;
+    background-image: url('../../lib/images/slider_prev.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    @media screen and(max-width: $md-width) {
+        left: 5%;
+    }
+}
+
+.slick-next {
+    height: 20px;
+    width: 60px;
+    position: absolute;
+    background-image: url('../../lib/images/slider_next.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    bottom: 0;
+    cursor: pointer;
+    right: 0;
+    @media screen and(max-width: $md-width) {
+        right: 5%;
+    }
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0 0 0;
+    li {
+        line-height: 0;
+        padding: 0 .3rem;
+        color: $color-secondary;
+        cursor: pointer;
+        font-size: 1px;
+        &.slick-active {
+            button {
+                width: 13px;
+                height: 13px;
+                background-color: $color-secondary;
+                opacity: 1;
+                color: $color-white;
+            }
+        }
+        button {
+            font-size: 1px;
+            width: 8px;
+            height: 8px;
+            background-color: $color-primary;
+            border-radius: 50%;
+            color: $color-primary;
+            opacity: 0.8;
+        }
+    }
+}

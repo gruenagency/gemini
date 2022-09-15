@@ -1,0 +1,286 @@
+// Animated Stars
+
+.stargroup {
+  margin: 0 0 2rem;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.stargroup li {
+    opacity: 0;
+    transition: opacity 0.65s ease 0.35s;
+
+}
+
+.animate ul.stargroup li.bounceInUp {
+    opacity: 1;
+  }
+
+  .client-ratings{
+      opacity: 0;
+  }
+
+  .client-ratings.test{
+    opacity: 1;
+}
+
+ 
+
+  .tech {
+      position: absolute;
+      right: 0rem;
+      opacity: 0;
+      width: 230px;
+      height: 560px;
+
+      @include create-mq($lg-width) {
+        display: none;
+    }
+
+      @include create-mq($sm-width) {
+          display: none;
+      }
+   
+  
+  }
+
+.truck {
+  visibility: hidden;
+}
+.truck--page {
+  visibility: hidden;
+  position: absolute;
+  top: 0rem;
+  right: 2rem;
+  width: 25%;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate-truck {
+img {
+  width: 100%;
+}
+  animation: animateTruck 1.5s ease-out;
+}
+
+@keyframes animateTruck {
+  0% {
+    transform: translate3d(370px, 0, 0);
+  }
+  85% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+
+// review stats animation
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.bounceInUp {
+  animation: bounceInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s both;
+}
+
+// stars animation
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(0, 100%, 0);
+    transform: translateX(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s both;
+}
+
+// technician animation
+
+@keyframes bounceInRightTech {
+  0% {
+    opacity: 0;
+    transform: translate3d(300px, -70px, 0);
+  }
+
+  90% {
+    transform: translate3d(-50px, -70px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-40px, -70px, 0);
+  }
+}
+
+.bounceInRightTech {
+  animation: bounceInRightTech 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s both;
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(300px, 0px, 0);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+.bounceInRight {
+  animation: bounceInRight 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s both;
+}
+
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInLeft {
+  animation: bounceInLeft 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s both;
+}
+
+.animated.delay-2s {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.tech {
+  position: absolute;
+  right: 0rem;
+  opacity: 0;
+  width: 230px;
+  height: 560px;
+
+  @include create-mq($lg-width) {
+    display: none;
+  }
+
+  @include create-mq($sm-width) {
+    display: none;
+  }
+}
+
+// Animated Stars
+
+.stargroup {
+  margin: 0 0 2rem;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.stargroup li {
+  opacity: 0;
+  transition: opacity 0.65s ease 0.35s;
+}
+
+.animate ul.stargroup li.bounceInUp {
+  opacity: 1;
+}
+
+.client-ratings {
+  opacity: 0;
+}
+
+.client-ratings.test {
+  opacity: 1;
+}
+
+.truck {
+  visibility: hidden;
+}
+.truck--page {
+  visibility: hidden;
+  position: absolute;
+  top: 0rem;
+  right: 2rem;
+  width: 450px;
+  z-index: -1;
+
+  @include create-mq($lg-width) {
+    display: none;
+  }
+
+  @include create-mq($sm-width) {
+    display: none;
+  }
+}

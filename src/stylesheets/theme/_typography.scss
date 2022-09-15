@@ -1,0 +1,203 @@
+/* _typography.scss */
+
+body {
+  color: $color-black;
+  font-family: $font-stack-primary;
+  font-size: $font-base;
+  font-weight: 500;
+  @include create-mq($md-width) {
+    font-size: $font-base-md;
+  }
+}
+
+
+p, ol, ul, blockquote, dl {
+  line-height: 2em;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: $font-base;
+  font-family: $font-stack-tertiary;
+  a {
+    color: $color-primary;
+    transition: 0.3s;
+    &:hover {
+      color: rgba($color-primary, .7);
+      text-decoration: underline;
+    }
+  }
+  &:empty { display: none; }
+  &:last-child {
+    margin: 0;
+  }
+}
+.cf-p > p {
+  margin: 0 0 .5em;
+  font-family: $font-stack-tertiary;
+  &:empty { display: none; }
+  &:last-child {
+    margin: 0;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $color-secondary;
+}
+
+li {
+  font-size: $font-base;
+  font-family: $font-stack-tertiary;
+  a {
+    color: $color-primary;
+  }
+}
+
+ol, ul {
+  list-style-position: inside;
+  margin: 0 0 2rem 1.5rem;
+  ol, ul {
+    margin-bottom: 0;
+  }
+  ol {
+    list-style-type: lower-roman;
+  }
+  ul {
+    list-style-type: circle;
+  }
+}
+
+.p--large,
+.page-intro p {
+  font-size: 1.125em;
+  @include create-mq($md-width) {
+    font-size: 1.22em;
+  }
+}
+
+.p--small {
+  font-size: 0.875em;
+  line-height: 1.2em;
+  @include create-mq($md-width) {
+    font-size: 0.7777em;
+  }
+}
+
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+sup {
+  font-size: 1em;
+  vertical-align: super;
+}
+
+sub {
+  font-size: 1em;
+  vertical-align: sub;
+}
+
+
+figcaption {
+  font-size: 0.7em;
+  line-height: 1.4em;
+  margin-top: 0.5em;
+
+}
+
+.wp-caption-text{
+  display: none;
+}
+
+
+// headings
+
+h1, h2, h3, h4, h5 {
+  color: $color-secondary;
+  font-weight: $font-weight-normal;
+  line-height: 1.2em;
+  margin: 0 0 1.5rem;
+  letter-spacing: -.5px;
+  @include create-mq($md-width) {
+    line-height: 1.1em;
+  }
+  a {
+    color: $color-primary;
+  }
+}
+
+h1, .h1 {
+  font-size: 3em;
+  margin: 0 0 1.5rem;
+  @include create-mq($md-width) {
+    font-size: 2.5em;
+    line-height: 1em;
+  }
+  
+  &.page-title {
+    font-size: 4rem;
+    @include create-mq($md-width){
+      font-size: 2.5rem;
+    }
+  }
+}
+
+h2, .h2 {
+  font-size: 2.5em;
+  @include create-mq($md-width) {
+    font-size: 2em;
+  }
+}
+
+h3, .h3 {
+  font-size: 2em;
+  @include create-mq($md-width) {
+    font-size: 1.5em;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.5em;
+  @include create-mq($md-width) {
+    font-size: 1.25em;
+    letter-spacing: kern(29);
+  }
+}
+
+h5, .h5 {
+  font-size: 1.25em;
+  font-weight: $font-weight-normal;
+
+  @include create-mq($md-width) {
+    font-size: 1em;
+
+  }
+}
+h6 {
+  text-transform: uppercase;
+  font-family: $font-stack-primary;
+  font-size: 1em;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+
+.archive-post-title:hover {
+color: $color-primary;
+}
+
+article.text_review > p, article.text_news > p {
+  font-family: $font-stack-primary;
+}
+
+.newsletter {
+  h3 {
+    width: 100%;
+  }
+}

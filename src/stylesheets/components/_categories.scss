@@ -1,0 +1,40 @@
+.cat-title {
+  font-weight: normal;
+  border-bottom: 1px solid #dedede;
+  padding: 1rem 0 0.5rem;
+}
+
+.cat-widget {
+  & ul {
+    margin: 0;
+  }
+
+  & ul li {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  & ul li a {
+    color: #f15d22;
+    display: block;
+    font-family: franklin-gothic-urw-cond, Franklin Gothic Medium,
+      Franklin Gothic, ITC Franklin Gothic, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 0.944em;
+    line-height: normal;
+    margin-bottom: 0.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #f15d22;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px 10px 7px;
+    position: relative;
+  }
+
+  & ul li a:hover,
+  ul li.current-cat a {
+    background-color: #f15d22;
+    color: #fff;
+  }
+}

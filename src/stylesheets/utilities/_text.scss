@@ -1,0 +1,136 @@
+/* text.scss */
+/**
+ * @define utilities
+ * Text utilities
+ */
+
+/* Text Utilities
+  ========================================================================== */
+
+/* Colors */
+
+.u-textColorWhite { color: $color-white; }
+.u-textColorBlack { color: $color-black; }
+.u-textColorPrimaryShade { color: $color-primary-shade; }
+.u-textColorPrimary { color: $color-primary; }
+.u-textColorPrimaryTint { color: $color-primary-tint; }
+.u-textColorSecondaryShade { color: $color-secondary-shade; }
+.u-textColorSecondary { color: $color-secondary; }
+.u-textColorSecondaryTint { color: $color-secondary-tint; }
+.u-textColorTertiaryShade { color: $color-tertiary-shade; }
+.u-textColorTertiary { color: $color-tertiary; }
+.u-textColorNeutral { color: $color-neutral; }
+
+
+/**
+ * Kerning
+ */
+
+.u-textKernMinus200 { letter-spacing: -0.2em; }
+.u-textKernMinus100 { letter-spacing: -0.1em; }
+.u-textKernMinus70 { letter-spacing: -0.07em; }
+.u-textKernMinus50 { letter-spacing: -0.05em; }
+.u-textKernNormal { letter-spacing: normal; }
+.u-textKernPlus50 { letter-spacing: 0.05em; }
+.u-textKernPlus70 { letter-spacing: 0.07em; }
+.u-textKernPlus100 { letter-spacing: 0.1em; }
+.u-textKernPlus200 { letter-spacing: 0.2em; }
+
+/**
+ * Line height
+ */
+
+.u-textHeightTighter { line-height: $font-base; }
+.u-textHeightTight { line-height: calc( #{$font-base} * 1.25); }
+.u-textHeightDefault { line-height: calc( #{$font-base} * 1.33); }
+.u-textHeightLoose { line-height: calc( #{$font-base} * 1.5); }
+.u-textHeightLooser { line-height: calc( #{$font-base} * 2); }
+.u-textHeightSloppy { line-height: calc( #{$font-base} * 3); }
+.u-textHeightLudiLoose { line-height: calc( #{$font-base} * 5); }
+
+
+/**
+ * Sizes
+ */
+
+.u- {
+  &textSizeBase { font-size: $font-base; }
+  &textSizeZero { font-size: 0; }
+
+  @for $i from 10 through 1 {
+    &textSizePlus#{$i} { font-size: ($font-base * pow($font-scale-factor, $i) ) ; }
+  }
+  @for $i from 1 through 5 {
+    &textSizeMinus#{$i} { font-size: ($font-base * pow($font-scale-factor-minus, $i)); }
+  }
+}
+
+/**
+ * Styles
+ */
+
+.u-textPrimary { font-family: $font-family-primary; }
+.u-textSecondary { font-family: $font-family-secondary; }
+.u-textTertiary { font-family: $font-family-tertiary; }
+
+.u-textFauxSmCaps {
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-size: ( #{$font-base} * #{$font-scale-factor-minus} );
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/**
+ * Aligns
+ */
+
+@mixin create-align-classes($modifier, $breakpoint) {
+  @include create-mq($breakpoint) {
+    &#{$modifier}-textAlignLeft { text-align: left; }
+    &#{$modifier}-textAlignCenter { text-align: center; }
+    &#{$modifier}-textAlignRight { text-align: right; }
+    &#{$modifier}-textAlignJustify { text-align: justify; }
+  }
+}
+
+.u {
+  @each $modifier, $breakpoint in $map-width-props {
+    @include create-align-classes($modifier, $breakpoint);
+  }
+}
+
+/**
+ * Wraps
+ */
+
+.u-wsNowrap { white-space: nowrap; }
+.u-wsWrap { white-space: normal; }
+
+/**
+ * Transforms
+ */
+
+.u-textCapitalize { text-transform: capitalize; }
+.u-textLowercase { text-transform: lowercase; }
+.u-textNoTransform { text-transform: none; }
+.u-textUppercase { text-rendering: optimizeLegibility; text-transform: uppercase; }
+
+/**
+ * Weights
+ */
+
+.u-textWeightBold { font-weight: $font-weight-bold; }
+.u-textWeightMedium { font-weight: $font-weight-medium; }
+.u-textWeightNormal { font-weight: $font-weight-normal; }
+.u-textWeightLight { font-weight: $font-weight-light; }
+
+/**
+ * Styles
+ */
+
+ .u-textDecoNone { text-decoration: none; }
+ .u-textDecoUnderline { text-decoration: underline; }
+ 
+ .u-textStyleNormal { font-style: normal; }
+ .u-textStyleItalic { font-style: italic; }

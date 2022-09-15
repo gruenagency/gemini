@@ -1,0 +1,37 @@
+/* fonts.scss */
+
+// vars
+$font-weight-bold:    900;
+$font-weight-medium:  600;
+$font-weight-normal:  500;
+$font-weight-light:   300;
+
+$font-stack-primary: 'franklin-gothic-urw-cond', sans-serif;
+$font-stack-secondary: 'CastleTUlt', serif;
+$font-stack-tertiary: 'Arial', sans-serif;
+
+$font-icons: 'FontAwesome';
+
+// font family declarations
+$font-family-primary:      $font-stack-primary;
+$font-family-secondary:    $font-stack-secondary;
+$font-family-tertiary:     $font-stack-tertiary;
+
+$font-base: 1.125rem;
+$font-base-md: 1.125rem;
+$font-scale-factor: 1.25;
+$font-scale-factor-minus: 0.875;
+
+// font face declarations
+
+  @font-face {
+    font-family: "CastleTUlt";
+    src: url("../../lib/fonts/CastleTUlt_0.ttf");
+    src:
+    url("../../lib/fonts/CastleTUlt.eot") format("embedded-opentype"),
+    url("../../lib/fonts/CastleTUltr.woff") format("woff"),
+    url("../../lib/fonts/CastleTUlt.otf") format("opentype"),
+    url("../../lib/fonts/CastleTUlt.svg#filename") format("svg");
+    }
+    
+    

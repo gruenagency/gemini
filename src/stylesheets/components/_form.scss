@@ -1,0 +1,305 @@
+/* forms.scss */
+
+.gform_wrapper {
+  box-shadow: -15px 15px $color-primary;
+  border-radius: 0;
+  border: 2px solid $color-primary;
+  .gform_heading {
+    h3.gform_title {
+      padding: .5rem 1rem;
+      color: $color-primary;
+      font-size: 1.25em;
+      font-weight: 700;
+      cursor: pointer;
+      position: relative;
+      &:before, &:after {
+        position: absolute;
+        content: '';
+        width: 20px;
+        right: 1rem;
+        top: 1.5rem;
+        height: 4px;
+        background-color: $color-primary;
+        transition: 0.4s;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+      &.rotate{ 
+         &:before {
+          transform: rotate(90deg);
+        }
+        &:after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+    .gform_description {
+      padding: 0 1rem 1rem 1rem;
+      color: $color-neutral;
+      line-height: 1.5rem;
+    }
+  }
+  .gform_body {
+    font-family: $font-stack-tertiary;
+    padding: 0 1rem;
+    span.name_first, span.name_last {
+      width: 100% !important;
+    }
+    input, textarea {
+      background: none;
+      border-bottom: 2px solid $color-neutral;
+      border-right: none;
+      border-top: none;
+      border-left: none;
+      outline: none;
+      padding: 0.75rem 1rem;
+      color: $color-secondary;
+      padding: 1rem;
+      font-family: $font-stack-primary;
+      font-size: 18px;
+      &::placeholder {
+        color: $color-secondary;
+        font-family: $font-stack-primary;
+        font-size: 18px;
+      }
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &:focus {
+        border-color: rgba($color-primary, .5);
+      }
+    }
+    label {
+      font-family: $font-stack-primary;
+      font-size: 18px;
+      color: $color-secondary;
+    }
+    select {
+      border: 2px solid $color-neutral;
+      color: $color-secondary;
+      font-family: $font-stack-primary;
+      padding: 1rem .5rem;
+      label {
+        color: $color-secondary;
+      }
+    }
+    textarea {
+      border-radius: 0;
+      border: 2px solid $color-neutral;
+      padding: .5rem;
+    }
+    .gfield_checkbox {
+      input {
+        visibility: hidden;
+      }
+      input[type=checkbox]:checked+label {
+        font-weight: 500;
+        &:before {
+          background-color: $color-secondary;
+        }
+      }
+      label {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+        position: relative;
+        padding-left: 5px;
+        &:before {
+          content: '';
+          width: 15px;
+          height: 15px;
+          border: 2px solid $color-secondary;
+          position: absolute;
+          left: -15px;
+          top: 7px;
+        }
+      }
+    }
+  }
+  .gform_footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    input[type='submit']{
+      cursor: pointer;
+      line-height: 1em;
+      padding: 0.75rem 1.5rem;
+      background: $color-primary;
+      border: 1px solid $color-primary;
+      color: $color-white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: $font-stack-primary;
+      font-weight: bold;
+      transition: 0.5s;
+      width: 50% !important;
+      &:hover {
+        color: $color-primary;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.site-search {
+  display: block;
+  margin: 0 auto 50px;
+  width: 90%;
+  text-align: center;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .sf-field-search {
+      width: 75%;
+      label {
+        width: 90%;
+      }
+      input {
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        border-bottom: 2px solid $color-neutral;
+        outline: none;
+        padding: 0.75rem 1rem;
+        color: $color-secondary;
+        padding: 1rem;
+        font-family: $font-stack-primary;
+        font-size: 18px;
+        &::placeholder {
+          color: $color-secondary;
+          font-family: $font-stack-primary;
+          font-size: 18px;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        &:focus {
+          border-color: rgba($color-primary, .5);
+        }
+      }
+    }
+    .sf-field-submit {
+      width: 10%;
+      input {
+        width: 100%;
+        cursor: pointer;
+        background-color: $color-white;
+        line-height: 1em;
+        position: relative;
+        padding: 0.5rem 1.5rem 0.5rem;
+        transition: $transition-base;
+        border-radius: 5px;
+        color: $color-primary;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: $font-stack-primary;
+        border: 1px solid $color-primary;
+        font-size: 18px;
+      }
+    }
+  }
+}
+.search-filter-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.searchandfilter {
+  position: relative;
+  h4 {
+    font-size: 32px;
+    font-family: $font-family-primary;
+  }
+  ul {
+    margin-left: 0;
+  }
+  .sf-field-reset {
+    position: absolute;
+    left: 0;
+    padding: 0;
+    top: 4.8rem;
+    a {
+      font-family: $font-family-primary;
+      font-size: 20px;
+      font-weight: 500;
+      border: 1px solid $color-primary;
+      color: $color-primary;
+      border-radius: 25px;
+      padding: 0.5rem 1.25rem;
+      margin: .25rem;
+      text-transform: uppercase;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+  .sf-field-search {
+    label {
+      width: 50%;
+    }
+    input {
+      width: 100%;
+      background-color: transparent;
+      border-bottom: 1px solid $color-neutral;
+      padding: 0 0 0.5rem 0;
+      background-color: transparent;
+      border-bottom: 1px solid $color-black;
+      color: $color-black;
+      font-family: $font-family-primary;
+      &::placeholder {
+        color: $color-black;
+        font-family: $font-family-primary;
+      }
+    }
+  }
+  .sf-field-category {
+    margin-bottom: 2rem;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        position: relative;
+        &:first-of-type {
+          margin-left: 75px;
+        }
+        &.sf-option-active {
+          label {
+            background-color: $color-primary;
+            color: $color-white;
+          }
+        }
+        input.sf-input-checkbox {
+          display: none;
+        }
+        label {
+          font-family: $font-family-primary;
+          border: 1px solid $color-primary;
+          color: $color-primary;
+          border-radius: 25px;
+          padding: 0.25rem 1.25rem;
+          margin: .25rem;
+          text-transform: uppercase;
+          transition: 0.3s;
+          &:hover {
+            cursor: pointer;
+            background-color: $color-primary;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,329 @@
+/* Service Menu Icons  */
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 1;
+  &:after{
+    background-size: contain;
+  }
+}
+
+#icon {
+  color: $color-primary;
+  font-size: 2em;
+}
+
+.menu-inline {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  @media screen and (max-width: $lg-width){
+    //justify-content: flex-start;
+  }
+  li.menu-item {
+    display: flex;
+    flex-basis: 25%;
+    margin-top: 1rem;
+    @media screen and (max-width: $lg-width){
+      flex-basis: 33%;
+      margin: 2rem 0;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      font-family: $font-family-primary;
+      text-align: center;
+      font-size: 22px;
+      line-height: 28px;
+      color: $color-black;
+      transition: 0.3s;
+      width: 90%;
+      &:hover {
+        color: $color-primary;
+      }
+      &:before {
+        content: " ";
+        display: inline-block;
+        margin: 0 auto 1rem;
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.wp-block-columns.service-menu {
+  .wp-block-column {
+    margin-left: 1em !important;
+    @media screen and(max-width: $md-width) {
+        margin: 1rem 0;
+        margin-left: 0 !important;
+      }
+    &:hover {
+      cursor: pointer;
+      h4, a {
+        transition: 0.3s;
+        color: $color-primary;
+        
+      }
+      img {
+        filter: invert(43%) sepia(90%) saturate(1989%) hue-rotate(348deg) brightness(97%) contrast(96%);
+      }
+    }
+    h4 {
+      word-wrap: break-word;
+      margin: 1rem 0 0 0;
+      font-size: 1.4vw;
+      overflow-wrap: normal;
+      max-width: 100%;
+      @media screen and(max-width: $lg-width) {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    } 
+    a {
+      color: $color-black;
+    }
+  }
+}
+
+
+.internal-services-section a.service-icon:before {
+  content: " ";
+  display: inline-block;
+  margin: 0 auto 0.25em;
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+/* Cooling Icons */
+#menu-item-7444 a:before {
+  background-image: url(../../lib/images/sprites/video-inspection2x.png);
+  width: 62px;
+  height: 69px;
+}
+#menu-item-7444 a:hover:before {
+background-position: -62px 0;
+}
+
+
+#menu-item-647 a:before {
+  background-image: url(../../lib/images/sprites/cooling-repair2x.png);
+  width: 65px;
+  height: 69px;
+}
+
+#menu-item-647 a:hover:before {
+  background-position: -65px 0;
+}
+
+#menu-item-648 a:before {
+  background-image: url(../../lib/images/sprites/cooling-install2x.png);
+  width: 68px;
+  height: 69px;
+}
+
+#menu-item-648 a:hover:before {
+  background-position: -68px 0;
+}
+
+#menu-item-649 a:before {
+  background-image: url(../../lib/images/sprites/swamp-coolers2x.png);
+  width: 68px;
+  height: 69px;
+}
+
+#menu-item-649 a:hover:before {
+  background-position: -68px 0;
+}
+
+/* Electrical Icons */
+
+#menu-item-657 a:before {
+  background-image: url(../../lib/images/sprites/gfci-outlets2x.png);
+  width: 70px;
+  height: 69px;
+}
+
+#menu-item-657 a:hover:before {
+  background-position: -70px 0;
+}
+
+#menu-item-658 a:before {
+  background-image: url(../../lib/images/sprites/wh-surge-protection2x.png);
+  width: 49px;
+  height: 69px;
+}
+
+#menu-item-658 a:hover:before {
+  background-position: -49px 0;
+}
+
+#menu-item-659 a:before {
+  background-image: url(../../lib/images/sprites/electrical-upgrades2x.png);
+  width: 69px;
+  height: 69px;
+}
+
+#menu-item-659 a:hover:before {
+  background-position: -69px 0;
+}
+
+#menu-item-660 a:before {
+  background-image: url(../../lib/images/sprites/outdoor-electric2x.png);
+  width: 70px;
+  height: 69px;
+}
+
+#menu-item-660 a:hover:before {
+  background-position: -70px 0;
+}
+
+/* Heating Icons */
+
+#menu-item-661 a:before {
+  background-image: url(../../lib/images/sprites/duct-work2x.png);
+  width: 106px;
+  height: 69px;
+}
+
+#menu-item-661 a:hover:before {
+  background-position: -106px 0;
+}
+
+#menu-item-662 a:before {
+  background-image: url(../../lib/images/sprites/humidifiers2x.png);
+  width: 51.35px;
+  height: 69px;
+}
+
+#menu-item-662 a:hover:before {
+  background-position: -51.35px 0;
+}
+
+#menu-item-663 a:before {
+  background-image: url(../../lib/images/sprites/heating-install-copy2x.png);
+  width: 68px;
+  height: 69px;
+}
+
+#menu-item-663 a:hover:before {
+  background-position: -68px 0;
+}
+
+#menu-item-664 a:before {
+  background-image: url(../../lib/images/sprites/heating-repair-copy2x.png);
+  width: 60px;
+  height: 69px;
+}
+
+#menu-item-664 a:hover:before {
+  background-position: -60px 0;
+}
+#menu-item-665 a:before {
+  background-image: url(../../lib/images/sprites/thermostat2x.png);
+  width: 69px;
+  height: 69px;
+}
+
+#menu-item-665 a:hover:before {
+  background-position: -69px 0;
+}
+
+/* Plumbing Icons */
+
+#menu-item-666 a:before {
+  background-image: url(../../lib/images/sprites/pipe-replace2x.png);
+  width: 79px;
+  height: 69px;
+}
+
+#menu-item-666 a:hover:before {
+  background-position: -80px 0;
+}
+
+#menu-item-667 a:before {
+  background-image: url(../../lib/images/sprites/sump-pump2x.png);
+  width: 58px;
+  height: 69px;
+}
+
+#menu-item-667 a:hover:before {
+  background-position: -58px 0;
+}
+
+#menu-item-668 a:before {
+  background-image: url(../../lib/images/sprites/video-inspection2x.png);
+  width: 62px;
+  height: 69px;
+}
+
+#menu-item-668 a:hover:before {
+  background-position: -62px 0;
+}
+
+#menu-item-669 a:before {
+  background-image: url(../../lib/images/sprites/water-heaters2x.png);
+  width: 58.9px;
+  height: 69px;
+}
+
+#menu-item-669 a:hover:before {
+  background-position: -58.9px 0;
+}
+#menu-item-670 a:before {
+  background-image: url(../../lib/images/sprites/water-pressure2x.png);
+  width: 48px;
+  height: 69px;
+}
+
+#menu-item-670 a:hover:before {
+  background-position: -48px 0;
+}
+
+/* Rooter Icons */
+
+#menu-item-671 a:before {
+  background-image: url(../../lib/images/sprites/drain-clean2x.png);
+  width: 69px;
+  height: 69px;
+}
+
+#menu-item-671 a:hover:before {
+  background-position: -69px 0;
+}
+
+#menu-item-672 a:before {
+  background-image: url(../../lib/images/sprites/high-pressure-jetting2x.png);
+  width: 30px;
+  height: 69px;
+}
+
+#menu-item-672 a:hover:before {
+  background-position: -30px 0;
+}
+
+#menu-item-673 a:before {
+  background-image: url(../../lib/images/sprites/trenchless2x.png);
+  width: 62px;
+  height: 69px;
+}
+
+#menu-item-673 a:hover:before {
+  background-position: -62px 0;
+}
+
+#menu-item-674 a:before {
+  background-image: url(../../lib/images/sprites/video-inspection2x.png);
+  width: 62px;
+  height: 69px;
+}
+
+#menu-item-674 a:hover:before {
+  background-position: -62px 0;
+}
+

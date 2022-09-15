@@ -1,0 +1,31 @@
+{
+  "name": "GLib",
+  "version": "1.0.0",
+  "description": "Gemini Component Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gemini-AMS/GLib.git"
+  },
+  "author": "Gemini AMS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gemini-AMS/GLib/issues"
+  },
+  "homepage": "https://github.com/Gemini-AMS/GLib#readme",
+  "dependencies": {
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}

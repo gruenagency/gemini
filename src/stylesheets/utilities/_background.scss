@@ -1,0 +1,41 @@
+/**
+ * _background.scss
+ * Background Utilities
+ */
+
+/**
+* Background Colors
+*/
+
+.u-bgColorWhite { background-color: $color-white; }
+.u-bgColorBlack { background-color: $color-black; }
+.u-bgColorPrimaryShade { background-color: $color-primary-shade; }
+.u-bgColorPrimary { background-color: $color-primary; }
+.u-bgColorPrimaryTint { background-color: $color-primary-tint; }
+.u-bgColorSecondaryShade { background-color: $color-secondary-shade; }
+.u-bgColorSecondary { background-color: $color-secondary; }
+.u-bgColorSecondaryTint { background-color: $color-secondary-tint; }
+.u-bgColorTertiary { background-color: $color-tertiary; }
+.u-bgColorTertiaryShade { background-color: $color-tertiary-shade; }
+.u-bgColorTertiaryTint { background-color: $color-tertiary-tint; }
+.u-bgColorNeutral { background-color: $color-neutral; }
+.u-bgColorNeutralTint { background-color: $color-neutral-tint; }
+.u-bgColorTransparent { background-color: transparent; }
+
+.u-boxShadow { box-shadow: $box-shadow-standard; }
+
+/**
+ * Background Positioning
+ */
+
+.u-bgFixed { background-attachment: fixed; }
+
+/**
+ * Background Size
+ */
+
+.u-bgSize50 { background-size: 50%; }
+.u-bgSize75 { background-size: 75%; }
+.u-bgSizeFull { background-size: 100%; }
+.u-bgSizeCover { background-size: cover; }
+.u-bgSizeContain { background-size: contain; }

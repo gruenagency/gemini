@@ -1,0 +1,138 @@
+/* _grid.scss */
+
+// define vars
+$grid-gutter: 4 * $grid-unit;
+$grid-columns: 12;
+$grid-column-single: 100 / $grid-columns * 1%;
+
+// define mixins
+
+@mixin create-col-classes($modifier, $grid-columns, $breakpoint) {
+  @include create-mq($breakpoint) {
+    @for $i from 1 through $grid-columns {
+      &#{$modifier}-#{$i} {
+        flex-basis: calc( ( (100 / (#{$grid-columns} / #{$i}) ) * 1% ) - 1px);
+      }
+
+      &#{$modifier}-#{$i}--strict {
+        flex: none;
+        width: (100 / ($grid-columns / $i) ) * 1%;
+      }
+
+      &#{$modifier}-offset-#{$i} {
+        margin-left: (100 / ($grid-columns / $i) ) * 1%;
+      }
+    }
+
+    &#{$modifier}-auto {
+      flex-basis: 0;
+    }
+
+    // spacing the boxes
+    &#{$modifier}--spaced {
+      margin-right: $grid-gutter;
+      margin-left: $grid-gutter;
+      &--first { margin-left: 0; }
+      &--last { margin-right: 0; }
+    }
+
+    // fit content
+    &#{$modifier}--fit-content {
+      flex: none;
+      width: auto;
+    }
+
+    // first and last order
+    &#{$modifier}--flex-first { order: -1; }
+    &#{$modifier}--flex-last { order: 9999; }
+  }
+}
+
+@mixin create-flex-classes($modifier, $breakpoint) {
+  @include create-mq($breakpoint) {
+    // direction
+    &#{$modifier}--row { flex-direction: row; }
+    &#{$modifier}--row-reverse { flex-direction: row-reverse; }
+    &#{$modifier}--column { flex-direction: column; }
+    &#{$modifier}--column-reverse { flex-direction: column-reverse; }
+
+    // wrapping
+    &#{$modifier}--no-wrap { flex-wrap: nowrap; }
+    &#{$modifier}--wrap { flex-wrap: wrap; }
+    &#{$modifier}--wrap-reverse { flex-wrap: wrap-reverse; }
+    
+    // vertical alignment
+    &#{$modifier}--align-top { align-items: flex-start; }
+    &#{$modifier}--align-middle { align-items: center; }
+    &#{$modifier}--align-bottom { align-items: flex-end; }
+    &#{$modifier}--align-base { align-items: baseline; }
+
+    
+    // horizontal alignment
+    &#{$modifier}--justify-start { justify-content: flex-start; }
+    &#{$modifier}--justify-center { justify-content: center; }
+    &#{$modifier}--justify-end { justify-content: flex-end; }
+    &#{$modifier}--justify-around { justify-content: space-around; }
+    &#{$modifier}--justify-between { justify-content: space-between; }
+    &#{$modifier}--justify-even { justify-content: space-evenly; }
+
+    
+    // equal heights
+    &#{$modifier}--stretch { align-items: stretch; }
+  }
+}
+
+.container {
+  width: 85%;
+  max-width: 1400px;
+  margin: 0 auto;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  &--narrow { 
+    width: 80%;
+    max-width: 960px;
+    @media screen and(max-width: $md-width) {
+      width: 85%;
+      max-width: 100%;
+    }
+  }
+  &--large {
+    width: 90%; 
+    max-width: none; 
+    margin: 0 auto;
+  }
+  &--full { 
+    width: 100%;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  @each $modifier, $breakpoint in $map-width-props {
+    @include create-flex-classes($modifier, $breakpoint);
+  }
+  &__col {
+    flex: 1 1 0%;
+    width: auto;
+    @each $modifier, $breakpoint in $map-width-props {
+      @include create-col-classes($modifier, $grid-columns, $breakpoint);
+    }
+    &--align-top { align-self: flex-start; }
+    &--align-middle { align-self: center; }
+    &--align-bottom { align-self: flex-end; }
+    &--stretch { align-self: stretch; }
+  }
+}
+
+// media queries
+
+// @include create-mq($md-width) {
+//   .container,
+//   .container:not(.container--full) {
+//     width: 95%;
+//   }
+//   .container--gutters:not(.container--full) {width: calc(95% + (2 * #{$grid-gutter}) );}
+// }

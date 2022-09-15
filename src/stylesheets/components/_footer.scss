@@ -1,0 +1,49 @@
+/* footer.scss */
+footer {
+  img {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    &.tdl-logo {
+      width: 30%;
+    }
+  }
+  .nav__list--footer {
+    margin: 1rem 0;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: .5rem;
+    border-left: 1px solid $color-neutral;
+    h5 {
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    ul {
+      list-style: none;
+      margin-left: 0;
+      li {
+        a {
+          text-transform: uppercase;
+          margin: 0;
+          font-size: 15px;
+          color: $color-neutral;
+          font-weight: normal;
+          text-transform: none;
+          word-wrap: break-word;
+          margin: 0;
+          &:hover {
+            color: $color-neutral-shade;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .grey {
+    flex: 1 1 15%;
+    background-color: #EBEBEB;
+    @media screen and (max-width: $lg-width){
+      flex: 1 1 100%;
+    }
+  }
+}

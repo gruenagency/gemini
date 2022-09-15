@@ -1,0 +1,26 @@
+// breakpoints.scss
+
+// Grid Units
+$grid-unit: 0.25rem;
+
+// Responsive
+
+$sm-width:  500px;
+$md-width:  768px;
+$md-lg-width:  900px;
+$lg-width:  1090px;
+$xl-width:  1580px;
+
+$map-width-props: ('': 0, '-sm': $sm-width, '-md': $md-width, '-lg': $lg-width, '-xl': $xl-width);
+
+
+@media screen and (max-width: $md-width){
+	.wp-block-image .alignleft {
+        float: none;
+        margin: 0;
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+}

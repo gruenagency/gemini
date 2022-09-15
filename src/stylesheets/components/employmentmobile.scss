@@ -1,0 +1,27 @@
+// /*employmentmobile.scss */ 
+
+@media only screen and (max-width: 600px) {
+    .reasons-copy-1 {
+        display: none;
+    }
+
+    .reasons-list {
+        display: none;
+    }
+
+    .job-listing .BambooHR-ATS-Department-Header {
+        display: none;
+    }
+
+    .content-top-mobile {
+        display: block;
+    }
+
+    .content-top {
+        display: none;
+    }
+    
+    .content-bottom {
+        display: none;
+    }
+}

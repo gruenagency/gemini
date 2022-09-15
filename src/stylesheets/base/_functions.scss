@@ -1,0 +1,23 @@
+// functions.scss
+
+@function em($target, $context: $font-base) {
+  @return ($target / $context) * 1em;
+}
+
+// powers
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+// letter-spacing
+@function kern($psd) {
+  @return ( $psd / 1000 ) * 1em;
+}

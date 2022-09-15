@@ -1,0 +1,22 @@
+/*
+Theme Name: Gemini
+Author: Gemini: AMS
+Author URI: geminiams.com
+Text Domain:
+*/
+
+
+// base
+@import 'base/*.scss';
+
+// global
+@import 'global/*.scss';
+
+// theme settings
+@import 'theme/*.scss';
+
+// components
+@import 'components/*.scss';
+
+// utilities
+@import 'utilities/*.scss';

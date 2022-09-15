@@ -1,0 +1,31 @@
+/* _colors.scss */
+
+// Colors
+
+$adjust-scale:            10%;
+
+// Todo: enter in custom values
+$color-white:							rgba(255, 255, 255, 1);
+$color-black:             #000000;
+
+$color-primary:           #F15D22;
+$color-primary-shade:     darken($color-primary, $adjust-scale);
+$color-primary-tint:      lighten($color-primary, $adjust-scale);
+
+$color-secondary:         #363636;
+$color-secondary-shade:   darken($color-secondary, $adjust-scale);
+$color-secondary-tint:    lighten($color-secondary, $adjust-scale);
+
+$color-tertiary:          #EBEBEB;
+$color-tertiary-shade:    darken($color-tertiary, $adjust-scale);
+$color-tertiary-tint:     lighten($color-tertiary, $adjust-scale);
+
+// Theme specific colors
+
+$color-neutral:           #959595;
+$color-neutral-shade:   darken($color-neutral, $adjust-scale);
+$color-neutral-tint:     lighten($color-neutral, $adjust-scale);
+
+// Todo: enter in custom values
+$box-shadow-standard:     18px 18px 40px 0 rgba($color-primary, 0.12);
+$box-shadow-focus:        24px 24px 50px 0 rgba($color-primary, 0.2);

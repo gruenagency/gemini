@@ -1,0 +1,84 @@
+.modal {
+  background: rgba($color-primary-shade, 1);
+  bottom: 0;
+  display: none;
+  left: 0;
+  overflow: scroll;
+  right: 0;
+  position: fixed;
+  top: 51px;
+  z-index: 5000;
+  &__content ul li {
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  .modal-stored-data {
+    display: none !important;
+  }
+}
+
+.sign-up-modal {
+  background: rgba($color-white, .8);
+  width: 100%;
+  display: none;
+  padding: 4rem;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, 0);
+  top: 0;
+  position: fixed;
+  z-index: 5000;
+  h3 {
+    font-size: 42px;
+    color: $color-primary;
+    position: relative;
+    cursor: pointer;
+    font-weight: 700 !important;
+    &:after, &:before {
+      content: '';
+      width: 30px;
+      height: 6px;
+      position: absolute;
+      right: 2rem;
+      top: 3rem;
+      background-color: $color-primary;
+      transition: 0.4s;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+  .gform_wrapper {
+    background-color: $color-white;
+    width: 45%;
+    display: block;
+    margin: 10% auto 0;
+    @media screen and (max-width: $md-width){
+      width: 85%;
+    }
+  }
+  .gform_legacy_markup_wrapper ul.gform_fields li.gfield {
+    margin: 0;
+    padding: 0;
+    .ginput_container_email {
+      margin-top: 0;
+    }
+    input, .ginput_container_email input {
+      padding: 0 0 5px 0;
+    }
+    .has_first_name {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      span {
+        width: 45%;
+      }
+    }
+  }
+  &.active {
+    display: block;
+  }
+}

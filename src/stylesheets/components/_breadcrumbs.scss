@@ -1,0 +1,14 @@
+#breadcrumbs,
+#breadcrumbs span span > a {
+  color: $color-secondary;
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom: 2rem;
+
+  & .breadcrumb_last {
+    color: rgba($color-secondary, 0.8);
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: none;
+  }
+}
